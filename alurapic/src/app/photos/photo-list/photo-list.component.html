@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Galeria de fotos</a>
+    <ap-search
+        (onTyping)="filter = $event"
+        [value]="filter"
+    >
+    </ap-search>
+  </nav>
+
+<ap-photos [photos]="photos | filterByDescription : filter"></ap-photos>
+
+
+<ap-load-button
+    (click)="load()"
+    [hasMore]="hasMore">
+</ap-load-button>
